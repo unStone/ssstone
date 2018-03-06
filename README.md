@@ -32,7 +32,7 @@ This project was generated with [electron-vue](https://github.com/SimulatedGREG/
 #### TODOList
 
 ##### 成功日记
-[] 文本框排列
+[-] 文本的水平对齐方式
 [] 字体大小
 [] 文件本地存储
 [] 右键弹出menu
