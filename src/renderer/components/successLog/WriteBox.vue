@@ -91,15 +91,17 @@
   }
   .setBar {
     position: absolute;
-    height: 35px;
     right: 0;
     bottom: 0;
     left: 0;
+    padding: 0 15px;
+    height: 35px;
+    line-height: 35px;
     background-color: bisque;
   }
   .mouseHover {
     cursor: pointer;
-    padding: 5px;
+    padding-left: 5px;
   }
   .mouseHover:hover {
     background-color: azure;
