@@ -7,7 +7,7 @@
 
 <script>
   import TopBar from '../components/TopBar.vue';
-  import WriteBox from '../components/WriteBox.vue';
+  import WriteBox from '../components/successLog/WriteBox.vue';
   import { setDocumentTitle } from '../../func/defaultSet';
 
   export default {

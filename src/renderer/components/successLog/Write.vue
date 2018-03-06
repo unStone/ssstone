@@ -1,14 +1,17 @@
 <template>
-  <textarea class="txtEditor" v-bind:style="style" />
+  <textarea class="txtEditor" v-bind:style="{textAlign}" />
 </template>
 
 <script>
   export default {
     name: 'write',
+    props: ['textAlign'],
     data() {
       return {
-        style: {},
       };
+    },
+    watch: {
+
     },
   };
 </script>
