@@ -28,6 +28,9 @@
 		font-size: 18px;
     background-color: transparent;
   }
+  textarea {
+    resize:none 
+  }
   textarea:focus {
     outline: none;
   }
