@@ -102,6 +102,7 @@
   .mouseHover {
     cursor: pointer;
     padding-left: 5px;
+    user-select:none;
   }
   .mouseHover:hover {
     background-color: azure;
