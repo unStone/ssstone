@@ -2,6 +2,7 @@
   <div class="txtEditorBox" v-bind:style="style">
     <Write
       :textAlign="textAlignItem.textAlign"
+      :fontSize="fontSizeItem.fontSize"
     />
     <div
       class="setBar"
@@ -12,6 +13,12 @@
       >
         {{textAlignItem.text}}
       </span>
+      <span
+        class="fontSize mouseHover" 
+        @click="changeFontSize"
+      >
+        {{fontSizeItem.text}}
+      </span>
     </div>
   </div>
 </template>
@@ -20,6 +27,7 @@
   import Write from './Write.vue';
 
   let textAlignIndex = 0;
+  let fontSizeIndex = 0;
   const textAlign = [{
     text: '左',
     textAlign: 'left',
@@ -30,6 +38,16 @@
     text: '右',
     textAlign: 'right',
   }];
+  const fontSize = [{
+    text: '小',
+    fontSize: '16px',
+  }, {
+    text: '中',
+    fontSize: '24px',
+  }, {
+    text: '大',
+    fontSize: '32px',
+  }];
 
   export default {
     name: 'write-box',
@@ -37,6 +55,7 @@
     data() {
       return {
         textAlignItem: textAlign[textAlignIndex],
+        fontSizeItem: fontSize[fontSizeIndex],
         style: {},
       };
     },
@@ -47,6 +66,13 @@
           textAlignIndex = 0;
         }
         this.$data.textAlignItem = textAlign[textAlignIndex];
+      },
+      changeFontSize() {
+        fontSizeIndex += 1;
+        if (fontSizeIndex >= fontSize.length) {
+          fontSizeIndex = 0;
+        }
+        this.$data.fontSizeItem = fontSize[fontSizeIndex];
       },
     },
   };
