@@ -19,4 +19,13 @@
     bottom: 0;
     left: 0;
   }
+  textarea {
+    resize:none 
+  }
+  textarea:focus {
+    outline: none;
+  }
+  .userUnSelect {
+    user-select:none;
+  }
 </style>

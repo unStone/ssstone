@@ -5,7 +5,7 @@
       :fontSize="fontSizeItem.fontSize"
     />
     <div
-      class="setBar"
+      class="setBar userUnSelect"
     >
       <span
         class="textAlign mouseHover" 
@@ -102,7 +102,6 @@
   .mouseHover {
     cursor: pointer;
     padding-left: 5px;
-    user-select:none;
   }
   .mouseHover:hover {
     background-color: azure;

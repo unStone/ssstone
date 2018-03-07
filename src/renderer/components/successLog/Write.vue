@@ -1,8 +1,46 @@
 <template>
-  <textarea class="txtEditor" v-bind:style="{textAlign, fontSize}" />
+  <textarea
+    contextmenu="supermenu"
+    class="txtEditor"
+    v-bind:style="{textAlign, fontSize}"
+    placeholder="请输入内容"
+  />
 </template>
 
 <script>
+  const { remote } = require('electron');
+  const { Menu, MenuItem } = remote;
+  const menu = new Menu();
+  const configDir = remote.app.getPath('userData');
+
+  menu.append(
+    new MenuItem({
+      label: 'MenuItem1',
+      click() {
+        console.log('item 1 clicked');
+      },
+    }),
+  );
+  // menu.append(
+  //   new MenuItem({ type: 'separator' }),
+  // );
+  menu.append(
+    new MenuItem({
+      label: 'MenuItem2',
+      type: 'checkbox',
+      checked: true,
+      click(e) {
+        console.log('item 2 clicked', e);
+      },
+    }),
+  );
+  
+  window.addEventListener('contextmenu', (e) => {
+    e.preventDefault();
+    menu.popup(remote.getCurrentWindow());
+  }, false);
+
+  console.log('configDir', configDir);
   export default {
     name: 'write',
     props: ['textAlign', 'fontSize'],
@@ -27,11 +65,5 @@
 		border:0px;
 		font-size: 18px;
     background-color: transparent;
-  }
-  textarea {
-    resize:none 
-  }
-  textarea:focus {
-    outline: none;
   }
 </style>
